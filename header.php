@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 require_once 'functions.php';
     $userstr = 'Welcome Guest';
         if (isset($_SESSION['user']))
