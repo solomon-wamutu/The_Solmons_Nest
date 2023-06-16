@@ -45,9 +45,7 @@ $address = $_POST['address'];
 
   if($res->num_rows > 0){
 
-    // $result = "DELETE FROM members WHERE userid > $res";
-    // $stmt = $connection-> prepare($result);
-    // $stmt->execute();
+  
     $err = "Dublicate username";
   }
         else {
