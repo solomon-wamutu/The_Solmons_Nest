@@ -50,9 +50,9 @@ color:#006600;
 #logo {
 font-family:Georgia;
 font-weight:bold;
-font-style :italic;
-font-size :97px;
-color:red;
+/* font-style :italic; */
+/* font-size :8px; */
+/* color:red; */
 }
 #robin {
 position:relative;

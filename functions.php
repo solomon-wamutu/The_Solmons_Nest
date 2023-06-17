@@ -9,12 +9,16 @@ $dbpass = '';
 // ...variables according
 // ...to your installation
 $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-if ($connection->connect_error) die("Fatal Error");
+        if ($connection->connect_error) die("Fatal Error");
+
+
 function createTable($name, $query)
 {
     queryMysql("CREATE TABLE IF NOT EXISTS $name($query)");
     echo "Table '$name' created or already exists.<br>";
 }
+
+
 function queryMysql($query)
 {
     global $connection;
@@ -22,6 +26,8 @@ function queryMysql($query)
     if (!$result) die("Fatal Error");
     return $result;
 }
+
+
 function destroySession()
 {
     $_SESSION = array();
@@ -29,6 +35,8 @@ function destroySession()
         setcookie(session_name(), '', time() - 2592000, '/');
     session_destroy();
 }
+
+
 function sanitizeString($var)
 {
     global $connection;
@@ -38,6 +46,8 @@ function sanitizeString($var)
     $var = stripslashes($var);
     return $connection->real_escape_string($var);
 }
+
+
 function showProfile($user)
 {
     if (file_exists("$user.jpg"))
